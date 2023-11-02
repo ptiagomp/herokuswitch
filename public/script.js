@@ -8,6 +8,11 @@ socket.on('stateChange', (state) => {
   document.body.style.backgroundColor = state ? 'white' : 'black';
 });
 
+// Listen for user count updates from the server
+socket.on('userCount', (count) => {
+  document.getElementById('userCount').textContent = `Users connected: ${count}`;
+});
+
 // Send state changes to the server when the user toggles the switch
 document.getElementById('toggleSwitch').addEventListener('change', function() {
   socket.emit('toggleSwitch', this.checked);

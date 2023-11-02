@@ -2,9 +2,13 @@ body {
   margin: 0;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: background-color 0.3s;
+}
+.status {
+  margin-bottom: 20px;
 }
 .switch {
   position: relative;

@@ -11,9 +11,14 @@ app.use(express.static('public'));
 
 // This variable holds the state of the switch
 let switchState = false;
+// This variable holds the count of connected users
+let userCount = 0;
 
 // Set up socket connection
 io.on('connection', (socket) => {
+  userCount++; // Increment user count on new connection
+  io.emit('userCount', userCount); // Emit the user count to all clients
+
   // Emit the current state to the newly connected client
   socket.emit('stateChange', switchState);
 
@@ -21,6 +26,12 @@ io.on('connection', (socket) => {
   socket.on('toggleSwitch', (state) => {
     switchState = state;
     io.emit('stateChange', switchState); // Emit to all connected clients
+  });
+
+  // Decrement user count on disconnection and emit the new count
+  socket.on('disconnect', () => {
+    userCount--;
+    io.emit('userCount', userCount);
   });
 });
 

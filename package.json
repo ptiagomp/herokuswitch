@@ -1,7 +1,7 @@
 {
   "name": "herokuswitch",
   "version": "1.0.0",
-  "description": "Real-time toggle switch web application",
+  "description": "Real-time toggle switch web application with user count",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -13,6 +13,6 @@
   "engines": {
     "node": "14.x"
   },
-  "author": "Your Name",
+  "author": "Tiago Martins Pinto",
   "license": "MIT"
 }
