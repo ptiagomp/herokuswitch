@@ -57,3 +57,13 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.text-dark {
+  color: black;
+  font-weight: bold;
+}
+
+.text-light {
+  color: white;
+  font-weight: bold;
+}

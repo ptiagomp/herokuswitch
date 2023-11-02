@@ -1,19 +1,18 @@
-// Connect to the server's socket
+// script.js
 const socket = io();
 
-// Listen for state changes from the server
 socket.on('stateChange', (state) => {
   const toggleSwitch = document.getElementById('toggleSwitch');
+  const userCountElement = document.getElementById('userCount');
   toggleSwitch.checked = state;
   document.body.style.backgroundColor = state ? 'white' : 'black';
+  userCountElement.className = state ? 'text-dark' : 'text-light'; // Change class based on state
 });
 
-// Listen for user count updates from the server
 socket.on('userCount', (count) => {
   document.getElementById('userCount').textContent = `Users connected: ${count}`;
 });
 
-// Send state changes to the server when the user toggles the switch
 document.getElementById('toggleSwitch').addEventListener('change', function() {
   socket.emit('toggleSwitch', this.checked);
 });
