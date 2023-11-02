@@ -1,0 +1,23 @@
+{
+  "name": "herokuswitch",
+  "version": "1.0.0",
+  "description": "A simple toggle switch web app with real-time state synchronization.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.0.0"
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ptiagomp/herokuswitch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
